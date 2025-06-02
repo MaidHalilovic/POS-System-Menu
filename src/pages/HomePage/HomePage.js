@@ -6,9 +6,7 @@ const HomePage = () => {
 
   const fetchMenu = async () => {
     try {
-      const { data } = await axios.get(
-        `https://connect.squareupsandbox.com/v2/catalog/list`
-      );
+      const { data } = await axios.get(`https://api.sampleapis.com/coffee/hot`);
 
       console.log(data);
       setMenu(data);
