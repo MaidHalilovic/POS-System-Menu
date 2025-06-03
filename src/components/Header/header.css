@@ -1,0 +1,13 @@
+.mainDiv {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px rgb(180, 180, 180);
+  flex-direction: row;
+  gap: 170px;
+}
+.pos {
+  margin-left: 70px;
+}
+.search {
+  background-color: rgb(214, 232, 238);
+}
