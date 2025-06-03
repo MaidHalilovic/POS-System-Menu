@@ -3,12 +3,15 @@ import "./header.css";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='mainDiv'>
       <div className='pos'>
-        <h1>
+        <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
           <span style={{ color: "#7AC6D2" }}>P</span>
           <span style={{ color: "#E78B48" }}>O</span>
           <span style={{ color: "#67AE6E" }}>S</span>
