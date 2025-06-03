@@ -6,7 +6,9 @@ const HomePage = () => {
 
   const fetchMenu = async () => {
     try {
-      const { data } = await axios.get(`https://api.sampleapis.com/coffee/hot`);
+      const { data } = await axios.get(
+        `https://free-food-menus-api-two.vercel.app/burgers `
+      );
 
       console.log(data);
       setMenu(data);
@@ -19,7 +21,7 @@ const HomePage = () => {
     fetchMenu();
   }, []);
 
-  return <div>HomePage</div>;
+  return <div className='mainDiv'></div>;
 };
 
 export default HomePage;
