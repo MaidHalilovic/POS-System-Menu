@@ -21,7 +21,11 @@ const HomePage = () => {
     fetchMenu();
   }, []);
 
-  return <div className='mainDiv'></div>;
+  return (
+    <div className='mainDiv'>
+      <div className=''></div>
+    </div>
+  );
 };
 
 export default HomePage;
