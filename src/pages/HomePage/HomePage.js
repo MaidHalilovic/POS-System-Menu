@@ -22,8 +22,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='mainDiv'>
-      <div className=''></div>
+    <div className='homePage'>
+      <div className='menu'>
+        <h2>Special Menu For You</h2>
+      </div>
+      <div className='meals'></div>
     </div>
   );
 };
