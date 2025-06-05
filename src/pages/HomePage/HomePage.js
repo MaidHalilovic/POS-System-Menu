@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./homePage.css";
 
 const HomePage = () => {
   const [menu, setMenu] = useState(null);
@@ -26,7 +27,13 @@ const HomePage = () => {
       <div className='menu'>
         <h2>Special Menu For You</h2>
       </div>
-      <div className='meals'></div>
+      <div className='cards'>
+        {menu.map((index, el) => (
+          <div className='card' key={index}>
+            <h1>{el[0].id}</h1>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
