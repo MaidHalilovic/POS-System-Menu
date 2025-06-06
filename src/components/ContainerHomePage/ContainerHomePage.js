@@ -4,6 +4,7 @@ import "./containerHomePage.css";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
+  const [number, setNumber] = useState(0);
 
   const fetchMenu = async () => {
     try {
@@ -21,6 +22,7 @@ const ContainerHomePage = () => {
   useEffect(() => {
     fetchMenu();
   }, []);
+
   return (
     <div>
       <div className='menu'>
@@ -36,9 +38,16 @@ const ContainerHomePage = () => {
               style={{ width: 100, height: 100 }}
             />
             <h3>{menu[0].name}</h3>
-            <div className='price'>
-              <p>Price:</p>
-              <p style={{ color: "orange" }}>${menu[1].price}</p>
+            <div className='addFood'>
+              <div className='price'>
+                <p>Price:</p>
+                <p style={{ color: "orange" }}>${menu[1].price}</p>
+              </div>
+              <div className='addMoreFood'>
+                <button onClick={() => setNumber(number + 1)}>+</button>
+                {number}
+                <button onClick={() => setNumber(number - 1)}>-</button>
+              </div>
             </div>
           </div>
           <div className='meals'>
