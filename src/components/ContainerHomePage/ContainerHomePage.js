@@ -38,7 +38,7 @@ const ContainerHomePage = () => {
             <h3>{menu[0].name}</h3>
             <div className='price'>
               <p>Price:</p>
-              <p>${menu[1].price}</p>
+              <p style={{ color: "orange" }}>${menu[1].price}</p>
             </div>
           </div>
           <div className='meals'>
