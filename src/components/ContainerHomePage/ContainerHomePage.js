@@ -4,7 +4,7 @@ import "./containerHomePage.css";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
-  const [number, setNumber] = useState(0);
+  const [numbers, setNumbers] = useState([]);
 
   const fetchMenu = async () => {
     try {
@@ -12,8 +12,8 @@ const ContainerHomePage = () => {
         `https://free-food-menus-api-two.vercel.app/burgers `
       );
 
-      console.log(data);
       setMenu(data);
+      setNumbers(Array(data.length).fill(0));
     } catch (error) {
       console.error("Error while fetching products", error);
     }
@@ -31,42 +31,41 @@ const ContainerHomePage = () => {
 
       {menu && menu.length > 0 ? (
         <>
-          <div className='meals'>
-            <img
-              src={menu[0].img}
-              alt='img'
-              style={{ width: 100, height: 100 }}
-            />
-            <h3>{menu[0].name}</h3>
-            <div className='addFood'>
+          {menu.map((item, idx) => (
+            <div className='meals' key={item.id || idx}>
+              <img
+                src={item.img}
+                alt='img'
+                style={{ width: 100, height: 100 }}
+              />
+              <h3>{item.name}</h3>
               <div className='price'>
                 <p>Price:</p>
-                <p style={{ color: "orange" }}>${menu[0].price}</p>
+                <p style={{ color: "orange" }}>${item.price}</p>
               </div>
               <div className='addMoreFood'>
-                <button onClick={() => setNumber(number + 1)}>+</button>
-                {number}
-                <button onClick={() => setNumber(number - 1 ? 0 : 0)}>-</button>
+                <button
+                  onClick={() => {
+                    const newNumbers = [...numbers];
+                    newNumbers[idx] += 1;
+                    setNumbers(newNumbers);
+                  }}
+                >
+                  +
+                </button>
+                {numbers[idx]}
+                <button
+                  onClick={() => {
+                    const newNumbers = [...numbers];
+                    newNumbers[idx] = Math.max(0, newNumbers[idx] - 1);
+                    setNumbers(newNumbers);
+                  }}
+                >
+                  -
+                </button>
               </div>
             </div>
-          </div>
-          <div className='meals'>
-            <img
-              src={menu[1].img}
-              alt='img'
-              style={{ width: 100, height: 100 }}
-            />
-            <h3>{menu[1].name}</h3>
-            <div className='price'>
-              <p>Price:</p>
-              <p style={{ color: "orange" }}>${menu[1].price}</p>
-            </div>
-            <div className='addMoreFood'>
-              <button onClick={() => setNumber(number + 1)}>+</button>
-              {number}
-              <button onClick={() => setNumber(number - 1 ? 0 : 0)}>-</button>
-            </div>
-          </div>
+          ))}
         </>
       ) : (
         <p>Učitavanje...</p>
