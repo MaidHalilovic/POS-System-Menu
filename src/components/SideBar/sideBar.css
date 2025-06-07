@@ -1,20 +1,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-right: solid 1px rgb(180, 180, 180);
-  width: 55px;
-  height: auto;
+  /* border-right: solid 1px rgb(180, 180, 180); */
+  width: 130px;
+  height: 900px;
   gap: 40px;
   padding: 10px 0;
-  margin-left: 10px;
+  margin-left: 20px;
   transition: all 0.3s ease;
   transform: translateX(0);
   overflow: hidden;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: start;
 }
-.container:hover {
-  width: 140px;
-  transform: translateX(4px);
-}
+
 .item {
   display: flex;
   align-items: center;
@@ -25,13 +26,10 @@
 .icon {
   font-size: 24px;
   margin-right: 10px;
+  display: flex;
 }
-.text {
+/* .text {
   opacity: 0;
   white-space: nowrap;
   transition: opacity 0.3s ease;
-}
-
-.container:hover .text {
-  opacity: 1;
-}
+} */

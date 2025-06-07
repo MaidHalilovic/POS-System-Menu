@@ -9,26 +9,28 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='mainDiv'>
-      <div className='pos'>
-        <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-          <span style={{ color: "#7AC6D2" }}>P</span>
-          <span style={{ color: "#E78B48" }}>O</span>
-          <span style={{ color: "#67AE6E" }}>S</span>
-        </h1>
-      </div>
-      <div className='search'>
-        <Stack spacing={2} sx={{ width: 300 }}>
-          <Autocomplete
-            id='free-solo-demo'
-            freeSolo
-            // options={top100Films.map((option) => option.title)}
-            renderInput={(params) => (
-              <TextField {...params} label='Search product or any order...' />
-            )}
-          />
-          {/* input is not working for now */}
-        </Stack>
+    <div className='header'>
+      <div className='mainDiv'>
+        <div className='pos'>
+          <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+            <span style={{ color: "#7AC6D2" }}>P</span>
+            <span style={{ color: "#E78B48" }}>O</span>
+            <span style={{ color: "#67AE6E" }}>S</span>
+          </h1>
+        </div>
+        <div className='search'>
+          <Stack spacing={2} sx={{ width: 300 }}>
+            <Autocomplete
+              id='free-solo-demo'
+              freeSolo
+              // options={top100Films.map((option) => option.title)}
+              renderInput={(params) => (
+                <TextField {...params} label='Search product or any order...' />
+              )}
+            />
+            {/* input is not working for now */}
+          </Stack>
+        </div>
       </div>
     </div>
   );

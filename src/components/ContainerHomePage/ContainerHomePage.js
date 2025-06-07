@@ -28,48 +28,45 @@ const ContainerHomePage = () => {
       <div className='menu'>
         <h2>Special Menu For You</h2>
       </div>
-
-      {menu && menu.length > 0 ? (
-        <>
-          {menu.map((item, idx) => (
-            <div className='meals' key={item.id || idx}>
-              <img
-                src={item.img}
-                alt='img'
-                style={{ width: 100, height: 100 }}
-              />
-              <h3>{item.name}</h3>
-              <div className='price'>
-                <p>Price:</p>
-                <p style={{ color: "orange" }}>${item.price}</p>
+      <div className='containerHomePage'>
+        {menu && menu.length > 0 ? (
+          <>
+            {menu.map((item, idx) => (
+              <div className='meals' key={item.id || idx}>
+                <img src={item.img} alt='img' />
+                <h3>{item.name}</h3>
+                <div className='price'>
+                  <p>Price:</p>
+                  <p style={{ color: "orange" }}>${item.price}</p>
+                </div>
+                <div className='addMoreFood'>
+                  <button
+                    onClick={() => {
+                      const newNumbers = [...numbers];
+                      newNumbers[idx] += 1;
+                      setNumbers(newNumbers);
+                    }}
+                  >
+                    +
+                  </button>
+                  {numbers[idx]}
+                  <button
+                    onClick={() => {
+                      const newNumbers = [...numbers];
+                      newNumbers[idx] = Math.max(0, newNumbers[idx] - 1);
+                      setNumbers(newNumbers);
+                    }}
+                  >
+                    -
+                  </button>
+                </div>
               </div>
-              <div className='addMoreFood'>
-                <button
-                  onClick={() => {
-                    const newNumbers = [...numbers];
-                    newNumbers[idx] += 1;
-                    setNumbers(newNumbers);
-                  }}
-                >
-                  +
-                </button>
-                {numbers[idx]}
-                <button
-                  onClick={() => {
-                    const newNumbers = [...numbers];
-                    newNumbers[idx] = Math.max(0, newNumbers[idx] - 1);
-                    setNumbers(newNumbers);
-                  }}
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          ))}
-        </>
-      ) : (
-        <p>Učitavanje...</p>
-      )}
+            ))}
+          </>
+        ) : (
+          <p>Učitavanje...</p>
+        )}
+      </div>
     </div>
   );
 };

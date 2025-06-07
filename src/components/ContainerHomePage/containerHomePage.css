@@ -1,0 +1,20 @@
+.meals {
+  width: 200px;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+.containerHomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.meals img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0px;
+}
