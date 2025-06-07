@@ -41,12 +41,12 @@ const ContainerHomePage = () => {
             <div className='addFood'>
               <div className='price'>
                 <p>Price:</p>
-                <p style={{ color: "orange" }}>${menu[1].price}</p>
+                <p style={{ color: "orange" }}>${menu[0].price}</p>
               </div>
               <div className='addMoreFood'>
                 <button onClick={() => setNumber(number + 1)}>+</button>
                 {number}
-                <button onClick={() => setNumber(number - 1)}>-</button>
+                <button onClick={() => setNumber(number - 1 ? 0 : 0)}>-</button>
               </div>
             </div>
           </div>
@@ -59,7 +59,12 @@ const ContainerHomePage = () => {
             <h3>{menu[1].name}</h3>
             <div className='price'>
               <p>Price:</p>
-              <p>${menu[1].price}</p>
+              <p style={{ color: "orange" }}>${menu[1].price}</p>
+            </div>
+            <div className='addMoreFood'>
+              <button onClick={() => setNumber(number + 1)}>+</button>
+              {number}
+              <button onClick={() => setNumber(number - 1 ? 0 : 0)}>-</button>
             </div>
           </div>
         </>
