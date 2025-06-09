@@ -4,7 +4,6 @@ import "./containerHomePage.css";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
-  const [numbers, setNumbers] = useState([]);
 
   const fetchMenu = async () => {
     try {
@@ -13,7 +12,6 @@ const ContainerHomePage = () => {
       );
 
       setMenu(data);
-      setNumbers(Array(data.length).fill(0));
     } catch (error) {
       console.error("Error while fetching products", error);
     }
@@ -40,25 +38,7 @@ const ContainerHomePage = () => {
                   <p style={{ color: "orange" }}>${item.price}</p>
                 </div>
                 <div className='addMoreFood'>
-                  <button
-                    onClick={() => {
-                      const newNumbers = [...numbers];
-                      newNumbers[idx] += 1;
-                      setNumbers(newNumbers);
-                    }}
-                  >
-                    +
-                  </button>
-                  {numbers[idx]}
-                  <button
-                    onClick={() => {
-                      const newNumbers = [...numbers];
-                      newNumbers[idx] = Math.max(0, newNumbers[idx] - 1);
-                      setNumbers(newNumbers);
-                    }}
-                  >
-                    -
-                  </button>
+                  <button></button>
                 </div>
               </div>
             ))}

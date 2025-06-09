@@ -6,7 +6,7 @@
   height: 900px;
   gap: 40px;
   padding: 10px 0;
-  margin-left: 20px;
+  margin-left: 12px;
   transition: all 0.3s ease;
   transform: translateX(0);
   overflow: hidden;
