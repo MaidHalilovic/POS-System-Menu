@@ -1,18 +1,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* border-right: solid 1px rgb(180, 180, 180); */
+  border-right: solid 1px rgb(180, 180, 180);
   width: 130px;
   height: 900px;
   gap: 40px;
   padding: 10px 0;
-  margin-left: 12px;
   transition: all 0.3s ease;
   transform: translateX(0);
   overflow: hidden;
-  margin-top: 10px;
   background-color: white;
-  border-radius: 10px;
   justify-content: start;
 }
 

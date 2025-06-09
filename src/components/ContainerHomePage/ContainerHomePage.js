@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./containerHomePage.css";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
@@ -10,6 +11,7 @@ const ContainerHomePage = () => {
       const { data } = await axios.get(
         `https://free-food-menus-api-two.vercel.app/burgers `
       );
+      console.log("Menu data:", data);
 
       setMenu(data);
     } catch (error) {
@@ -33,18 +35,19 @@ const ContainerHomePage = () => {
               <div className='meals' key={item.id || idx}>
                 <img src={item.img} alt='img' />
                 <h3>{item.name}</h3>
+                <div className=''></div>
                 <div className='price'>
                   <p>Price:</p>
                   <p style={{ color: "orange" }}>${item.price}</p>
                 </div>
                 <div className='addMoreFood'>
-                  <button></button>
+                  <button>+ Add Product</button>
                 </div>
               </div>
             ))}
           </>
         ) : (
-          <p>Učitavanje...</p>
+          <CircularProgress size={40} />
         )}
       </div>
     </div>
