@@ -19,12 +19,3 @@
   height: 140px;
   border-radius: 10px 10px 0 0px;
 }
-.price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  gap: 80px;
-  margin-top: 10px;
-}

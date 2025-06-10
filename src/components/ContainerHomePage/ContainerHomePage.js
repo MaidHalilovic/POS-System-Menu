@@ -34,10 +34,8 @@ const ContainerHomePage = () => {
             {menu.map((item, idx) => (
               <div className='meals' key={item.id || idx}>
                 <img src={item.img} alt='img' />
-                <h3>{item.name}</h3>
-                <div className=''></div>
-                <div className='price'>
-                  <p>Price:</p>
+                <div className='description'>
+                  <h3>{item.name}</h3>
                   <p style={{ color: "orange" }}>${item.price}</p>
                 </div>
                 <div className='addMoreFood'>
