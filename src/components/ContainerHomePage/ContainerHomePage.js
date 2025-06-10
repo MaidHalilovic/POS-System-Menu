@@ -11,8 +11,6 @@ const ContainerHomePage = () => {
       const { data } = await axios.get(
         `https://free-food-menus-api-two.vercel.app/burgers `
       );
-      console.log("Menu data:", data);
-
       setMenu(data);
     } catch (error) {
       console.error("Error while fetching products", error);
@@ -31,12 +29,15 @@ const ContainerHomePage = () => {
       <div className='containerHomePage'>
         {menu && menu.length > 0 ? (
           <>
-            {menu.map((item, idx) => (
+            {menu.slice(0, 6).map((item, idx) => (
               <div className='meals' key={item.id || idx}>
                 <img src={item.img} alt='img' />
                 <div className='description'>
-                  <h3>{item.name}</h3>
-                  <p style={{ color: "orange" }}>${item.price}</p>
+                  <div className='priceAndName'>
+                    <h3>{item.name}</h3>
+                    <p style={{ color: "orange" }}>${item.price}</p>
+                  </div>
+                  <p style={{ color: "gray" }}>{item.dsc}</p>
                 </div>
                 <div className='addMoreFood'>
                   <button>+ Add Product</button>
