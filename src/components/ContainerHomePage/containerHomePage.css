@@ -18,9 +18,10 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
   padding: 32px;
-  margin-top: 90px;
+  margin-top: 45px;
   margin-left: 130px;
   box-sizing: border-box;
+  flex: 1;
 }
 .meals img {
   width: 100%;
@@ -33,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 8px;
 }
 .description {
@@ -60,4 +61,15 @@
 }
 .addMoreFood button:hover {
   background: #ff9900;
+}
+.main-content-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.order-list-wrapper {
+  width: 320px;
+  margin-left: 32px;
+  position: sticky;
+  top: 90px;
 }

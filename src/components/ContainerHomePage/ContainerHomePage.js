@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./containerHomePage.css";
 import CircularProgress from "@mui/material/CircularProgress";
+import OrderList from "../OrderList/OrderList";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
@@ -26,28 +27,33 @@ const ContainerHomePage = () => {
       <div className='menu'>
         <h2>Special Menu For You</h2>
       </div>
-      <div className='containerHomePage'>
-        {menu && menu.length > 0 ? (
-          <>
-            {menu.slice(0, 3).map((item, idx) => (
-              <div className='meals' key={item.id || idx}>
-                <img src={item.img} alt='img' />
-                <div className='description'>
-                  <div className='priceAndName'>
-                    <h3>{item.name}</h3>
-                    <p style={{ color: "orange" }}>${item.price}</p>
+      <div className='main-content-flex'>
+        <div className='containerHomePage'>
+          {menu && menu.length > 0 ? (
+            <>
+              {menu.slice(0, 3).map((item, idx) => (
+                <div className='meals' key={item.id || idx}>
+                  <img src={item.img} alt='img' />
+                  <div className='description'>
+                    <div className='priceAndName'>
+                      <h3>{item.name}</h3>
+                      <p style={{ color: "orange" }}>${item.price}</p>
+                    </div>
+                    <p style={{ color: "gray" }}>{item.dsc}</p>
                   </div>
-                  <p style={{ color: "gray" }}>{item.dsc}</p>
+                  <div className='addMoreFood'>
+                    <button>+ Add Product</button>
+                  </div>
                 </div>
-                <div className='addMoreFood'>
-                  <button>+ Add Product</button>
-                </div>
-              </div>
-            ))}
-          </>
-        ) : (
-          <CircularProgress size={40} />
-        )}
+              ))}
+            </>
+          ) : (
+            <CircularProgress size={40} />
+          )}
+        </div>
+        <div className='order-list-wrapper'>
+          <OrderList />
+        </div>
       </div>
     </div>
   );

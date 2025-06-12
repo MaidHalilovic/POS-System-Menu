@@ -3,7 +3,7 @@
   flex-direction: column;
   border-right: solid 1px rgb(180, 180, 180);
   width: 130px;
-  height: 900px;
+  height: auto;
   gap: 40px;
   padding: 10px 0;
   transition: all 0.3s ease;
