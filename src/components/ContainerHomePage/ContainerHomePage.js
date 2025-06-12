@@ -29,7 +29,7 @@ const ContainerHomePage = () => {
       <div className='containerHomePage'>
         {menu && menu.length > 0 ? (
           <>
-            {menu.slice(0, 6).map((item, idx) => (
+            {menu.slice(0, 3).map((item, idx) => (
               <div className='meals' key={item.id || idx}>
                 <img src={item.img} alt='img' />
                 <div className='description'>
