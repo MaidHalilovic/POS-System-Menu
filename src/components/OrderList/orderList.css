@@ -1,11 +1,19 @@
 .orderList {
-  width: 240px;
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: white;
-  height: 100vh;
+  gap: 18px;
+  margin-top: 24px;
   position: relative;
-  bottom: 88px;
-  margin-left: 100px;
+  bottom: 112px;
+  height: auto;
+}
+
+.orderList-header {
+  font-weight: bold;
+  color: #ff5a00;
+  margin-bottom: 8px;
 }
