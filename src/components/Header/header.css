@@ -8,11 +8,23 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 190px;
+  gap: 180px;
   background-color: white;
   width: 100%;
 }
-
+.mainDiv button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #04aa6d;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+}
 .pos {
   margin-left: 30px;
 }

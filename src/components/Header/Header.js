@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useNavigate } from "react-router-dom";
+import { HiMiniNewspaper } from "react-icons/hi2";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -29,6 +30,10 @@ const Header = () => {
             />
           </Stack>
         </div>
+        <button>
+          <HiMiniNewspaper />
+          Add Table
+        </button>
       </div>
     </div>
   );
