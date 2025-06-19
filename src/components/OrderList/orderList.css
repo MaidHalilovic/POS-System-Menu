@@ -17,3 +17,21 @@
   color: #ff5a00;
   margin-bottom: 8px;
 }
+.payments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payments button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 17px;
+  width: 270px;
+  background-color: #04aa6d;
+  border: #04aa6d;
+  height: 40px;
+  border-radius: 10px;
+}

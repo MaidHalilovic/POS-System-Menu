@@ -23,12 +23,10 @@ const Header = () => {
             <Autocomplete
               id='free-solo-demo'
               freeSolo
-              // options={top100Films.map((option) => option.title)}
               renderInput={(params) => (
-                <TextField {...params} label='Search product or any order...' />
+                <TextField {...params} label='Search any product...' />
               )}
             />
-            {/* input is not working for now */}
           </Stack>
         </div>
       </div>
