@@ -42,7 +42,7 @@ const ContainerHomePage = () => {
                     <p style={{ color: "gray" }}>{item.dsc}</p>
                   </div>
                   <div className='addMoreFood'>
-                    <button>+ Add Product</button>
+                    <button>+ Add on Table</button>
                   </div>
                 </div>
               ))}
