@@ -5,6 +5,7 @@ import { MdPayment } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const OrderList = () => {
+  const [number, setNumber] = useState(1);
   const [menu, setMenu] = useState([]);
   const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const OrderList = () => {
   return (
     <div className='orderList'>
       <div className='orderList-header'>
-        <span>Table 01</span>
+        <span>Table {number}</span>
       </div>
       <div className='orderItem'></div>
       <div className='orderPrice'>
