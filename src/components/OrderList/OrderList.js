@@ -4,8 +4,7 @@ import axios from "axios";
 import { MdPayment } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-const OrderList = () => {
-  const [number, setNumber] = useState(1);
+const OrderList = ({ number, items }) => {
   const [menu, setMenu] = useState([]);
   const navigate = useNavigate();
 
@@ -38,6 +37,9 @@ const OrderList = () => {
           <button onClick={() => navigate("/Orders")}>
             <MdPayment /> Place Order
           </button>
+          <div className='order-list-wrapper'>
+            <OrderList number={number} items={items} />
+          </div>
         </div>
       </div>
     </div>
