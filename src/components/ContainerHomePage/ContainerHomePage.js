@@ -7,15 +7,14 @@ import OrderList from "../OrderList/OrderList";
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
   const [items, setItems] = useState([]);
-  const [number, setNumber] = useState(1);
+  const [tableNumber, setTableNumber] = useState(1);
 
   const handleAddToOrder = () => {
     const newItem = {
       id: items.length + 1,
     };
     setItems([...items, newItem]);
-    number++;
-    setNumber(number);
+    setTableNumber((prev) => prev + 1);
   };
 
   const fetchMenu = async () => {
