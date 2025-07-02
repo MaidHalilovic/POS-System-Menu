@@ -6,21 +6,24 @@ import SideBar from "./components/SideBar/SideBar";
 import Menu from "./pages/Menu/Menu";
 import Orders from "./pages/Orders/Orders";
 import Layout from "./components/Layout/Layout";
+import { MenuProvider } from "./MenuContext/MenuContext";
 
 function App() {
   return (
-    <div className='noto-sans'>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path='menu' element={<Menu />} />
-            <Route path='orders' element={<Orders />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <MenuProvider>
+      <div className='noto-sans'>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path='menu' element={<Menu />} />
+              <Route path='orders' element={<Orders />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </MenuProvider>
   );
 }
 

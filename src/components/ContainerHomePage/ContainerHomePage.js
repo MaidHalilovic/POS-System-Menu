@@ -1,26 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./containerHomePage.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import OrderList from "../OrderList/OrderList";
+import { useMenu } from "../../MenuContext/MenuContext";
 
 const ContainerHomePage = () => {
-  const [menu, setMenu] = useState([]);
-
-  const fetchMenu = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://free-food-menus-api-two.vercel.app/burgers `
-      );
-      setMenu(data);
-    } catch (error) {
-      console.error("Error while fetching products", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const { menu, fetchMenu, loading } = useMenu();
 
   return (
     <div>
@@ -29,7 +14,7 @@ const ContainerHomePage = () => {
       </div>
       <div className='main-content-flex'>
         <div className='containerHomePage'>
-          {menu && menu.length > 0 ? (
+          {!loading && menu.length > 0 ? (
             <>
               {menu.slice(0, 6).map((item, idx) => (
                 <div className='meals' key={item.id || idx}>
