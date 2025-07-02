@@ -30,9 +30,7 @@ const Menu = () => {
       ) : (
         <CircularProgress size={40} />
       )}
-      <div className='order-list-wrapper'>
-        <OrderList />
-      </div>
+      ``
     </div>
   );
 };
