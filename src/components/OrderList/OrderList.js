@@ -29,7 +29,7 @@ const OrderList = () => {
       <div className='orderList'>
         <div className='orderList-header'>
           <span>Table</span>
-          <span style={{ color: "black" }}>Go to menu to order </span>
+          {/* <span style={{ color: "black" }}>Go to menu to order </span> */}
         </div>
         <div className='orderItem'></div>
         <div className='orderPrice'>
