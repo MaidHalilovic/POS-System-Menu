@@ -34,7 +34,7 @@ const OrderList = ({ number, items }) => {
 
         <p>Total</p>
         <div className='payments'>
-          <button onClick={() => navigate("/Orders")}>
+          {/* <button onClick={() => navigate("/Orders")}> */}
             <MdPayment /> Place Order
           </button>
           <div className='order-list-wrapper'>
