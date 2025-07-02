@@ -30,10 +30,10 @@ const Header = () => {
             />
           </Stack>
         </div>
-        <button>
+        {/* <button>
           <HiMiniNewspaper />
           Add Table
-        </button>
+        </button> */}
       </div>
     </div>
   );

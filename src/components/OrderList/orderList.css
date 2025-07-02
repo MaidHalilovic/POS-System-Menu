@@ -13,6 +13,9 @@
 }
 
 .orderList-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-weight: bold;
   color: #ff5a00;
   margin-bottom: 8px;

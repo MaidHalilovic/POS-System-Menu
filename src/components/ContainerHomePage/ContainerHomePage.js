@@ -6,16 +6,6 @@ import OrderList from "../OrderList/OrderList";
 
 const ContainerHomePage = () => {
   const [menu, setMenu] = useState([]);
-  const [items, setItems] = useState([]);
-  const [tableNumber, setTableNumber] = useState(1);
-
-  const handleAddToOrder = () => {
-    const newItem = {
-      id: items.length + 1,
-    };
-    setItems([...items, newItem]);
-    setTableNumber((prev) => prev + 1);
-  };
 
   const fetchMenu = async () => {
     try {
@@ -52,15 +42,8 @@ const ContainerHomePage = () => {
                     <p style={{ color: "gray" }}>{item.dsc}</p>
                   </div>
                   <div className='addMoreFood'>
-                    <button onClick={handleAddToOrder(item)}>
-                      + Add on Table
-                    </button>
+                    <button>+ Add on Table</button>
                   </div>
-                  {/* <ul>
-                    {items.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul> */}
                 </div>
               ))}
             </>
