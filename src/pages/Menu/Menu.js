@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./menu.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useMenu } from "../../MenuContext/MenuContext";
@@ -6,6 +6,10 @@ import OrderList from "../../components/OrderList/OrderList";
 
 const Menu = () => {
   const { menu, fetchMenu, loading } = useMenu();
+
+  const product = () => {
+    <OrderList />;
+  };
 
   return (
     <div className='menu'>
@@ -22,7 +26,7 @@ const Menu = () => {
                 <p style={{ color: "gray" }}>{item.dsc}</p>
               </div>
               <div className='addMoreFood'>
-                <button>+ Add on Table</button>
+                <button onClick={product}>+ Add on Table</button>
               </div>
             </div>
           ))}

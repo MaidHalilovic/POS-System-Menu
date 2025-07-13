@@ -36,9 +36,9 @@ const ContainerHomePage = () => {
             <CircularProgress size={40} />
           )}
         </div>
-        <div className='order-list-wrapper'>
+        {/* <div className='order-list-wrapper'>
           <OrderList />
-        </div>
+        </div> */}
       </div>
     </div>
   );
