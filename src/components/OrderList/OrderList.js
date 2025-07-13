@@ -1,52 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./orderList.css";
-import axios from "axios";
 import { MdPayment } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { MenuProvider } from "../../MenuContext/MenuContext";
+import { useOrder } from "../../OrderContext/OrderContext";
 
 const OrderList = () => {
-  // const [menu, setMenu] = useState([]);
+  const { order } = useOrder();
   const navigate = useNavigate();
 
-  // const fetchMenu = async () => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       `https://free-food-menus-api-two.vercel.app/burgers `
-  //     );
-  //     setMenu(data);
-  //   } catch (error) {
-  //     console.error("Error while fetching products", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchMenu();
-  // }, []);
-
   return (
-    <MenuProvider>
-      <div className='orderList'>
-        <div className='orderList-header'>
-          <span>Table</span>
-          {/* <span style={{ color: "black" }}>Go to menu to order </span> */}
-        </div>
-        <div className='orderItem'></div>
-        <div className='orderPrice'>
-          <p>SubTotal:</p>
-
-          <p>Total:</p>
-          <div className='payments'>
-            <button onClick={() => navigate("/Orders")}>
-              <MdPayment /> Place Order
-            </button>
-            {/* <div className='order-list-wrapper'>
-            <OrderList />
-          </div> */}
-          </div>
+    <div className='orderList'>
+      <div className='orderList-header'>
+        <span>Table</span>
+      </div>
+      <div className='orderItem'>
+        {order.length === 0 ? (
+          <p>No products added.</p>
+        ) : (
+          order.map((item) => (
+            <div key={item.id} className='order-row'>
+              <span>{item.name}</span>
+              <span>x{item.quantity}</span>
+            </div>
+          ))
+        )}
+      </div>
+      <div className='orderPrice'>
+        <p>SubTotal:</p>
+        <p>Total:</p>
+        <div className='payments'>
+          <button onClick={() => navigate("/Orders")}>
+            <MdPayment /> Place Order
+          </button>
         </div>
       </div>
-    </MenuProvider>
+    </div>
   );
 };
 

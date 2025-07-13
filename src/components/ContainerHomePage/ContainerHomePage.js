@@ -1,11 +1,12 @@
 import React from "react";
 import "./containerHomePage.css";
 import CircularProgress from "@mui/material/CircularProgress";
-import OrderList from "../OrderList/OrderList";
 import { useMenu } from "../../MenuContext/MenuContext";
+import { useOrder } from "../../OrderContext/OrderContext"; // <-- Add this
 
 const ContainerHomePage = () => {
   const { menu, fetchMenu, loading } = useMenu();
+  const { addToOrder } = useOrder();
 
   return (
     <div>
@@ -27,7 +28,9 @@ const ContainerHomePage = () => {
                     <p style={{ color: "gray" }}>{item.dsc}</p>
                   </div>
                   <div className='addMoreFood'>
-                    <button>+ Add on Table</button>
+                    <button onClick={() => addToOrder(item)}>
+                      + Add on Table
+                    </button>
                   </div>
                 </div>
               ))}
