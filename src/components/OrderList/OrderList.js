@@ -19,6 +19,18 @@ const OrderList = () => {
         ) : (
           order.map((item) => (
             <div key={item.id} className='order-row'>
+              <img
+                src={item.img}
+                alt={item.name}
+                className='order-row-img'
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "8px",
+                  objectFit: "cover",
+                  marginRight: "8px",
+                }}
+              />
               <span>{item.name}</span>
               <span>x{item.quantity}</span>
             </div>

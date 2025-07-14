@@ -10,7 +10,7 @@ const Menu = () => {
   const { addToOrder } = useOrder();
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", alignItems: "flex-start" }}>
       <div className='menu'>
         {!loading && menu.length > 0 ? (
           <>
