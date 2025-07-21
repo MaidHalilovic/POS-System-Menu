@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useNavigate } from "react-router-dom";
-import { HiMiniNewspaper } from "react-icons/hi2";
 import { useMenu } from "../../MenuContext/MenuContext";
 
 const Header = () => {

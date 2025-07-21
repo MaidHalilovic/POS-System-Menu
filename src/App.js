@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
-import SideBar from "./components/SideBar/SideBar";
 import Menu from "./pages/Menu/Menu";
 import Orders from "./pages/Orders/Orders";
 import Layout from "./components/Layout/Layout";

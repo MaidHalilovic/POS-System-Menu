@@ -5,7 +5,7 @@ import { useMenu } from "../../MenuContext/MenuContext";
 import { useOrder } from "../../OrderContext/OrderContext"; // <-- Add this
 
 const ContainerHomePage = () => {
-  const { menu, fetchMenu, loading } = useMenu();
+  const { menu, loading } = useMenu();
   const { addToOrder } = useOrder();
 
   return (
