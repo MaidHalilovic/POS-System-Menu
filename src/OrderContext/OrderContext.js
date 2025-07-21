@@ -7,6 +7,7 @@ export const useOrder = () => useContext(OrderContext);
 
 export const OrderProvider = ({ children }) => {
   const [order, setOrder] = useState([]);
+  const [placedOrders, setPlacedOrders] = useState([]);
 
   const addToOrder = (item) => {
     setOrder((prev) => {
@@ -21,8 +22,27 @@ export const OrderProvider = ({ children }) => {
     });
   };
 
+  const placeOrder = () => {
+    if (order.length > 0) {
+      setPlacedOrders((prev) => [...prev, order]);
+      setOrder([]); // Clear current order after placing
+    }
+  };
+
+  const deletePlacedOrder = (index) => {
+    setPlacedOrders((prev) => prev.filter((_, i) => i !== index));
+  };
+
   return (
-    <OrderContext.Provider value={{ order, addToOrder }}>
+    <OrderContext.Provider
+      value={{
+        order,
+        addToOrder,
+        placeOrder,
+        placedOrders,
+        deletePlacedOrder,
+      }}
+    >
       {children}
     </OrderContext.Provider>
   );
